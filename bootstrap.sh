@@ -83,7 +83,7 @@ fi
 pm2 start /Projects/node_test/server.js > /dev/null
 
 # Custom repo example
-if [ -d ${PROJECT_DIR}/tree-manager ]; then
+if [ ! -d ${PROJECT_DIR}/tree-manager ]; then
    git clone https://github.com/baniol/tree-manager.git ${PROJECT_DIR}/tree-manager
    cd ${PROJECT_DIR}/tree-manager;npm install
    cd ${PROJECT_DIR}/tree-manager/example;npm install;pm2 start index.js
