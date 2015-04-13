@@ -69,7 +69,7 @@ fi
 echo " >>> Replacing pm2-web config.json"
 cp -r /Projects/provision/config/pm2-web-config.json /usr/lib/node_modules/pm2-web/config.json
 
-pm2 start /usr/bin/node-inspector
+pm2 start /usr/bin/node-inspector -- --save-live-edit
 
 echo " >>> Try to launch pm2-web monitor tool"
 if [ -f /usr/lib/node_modules/pm2-web/pm2-web.js ]; then
